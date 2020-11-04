@@ -33,7 +33,9 @@ function makeBoard(HEIGHT) {
 
 function makeHtmlBoard() {
     let htmlBoard = document.getElementById('board');
-    // TODO: add comment for this code
+    // create the 'insertion' point for each piece at the top of the
+    // game board. Add an event listener to check which column the 
+    // piece is placed/dropped
     let top = document.createElement("tr");
     top.setAttribute("id", "column-top");
     top.addEventListener("click", handleClick);
@@ -45,7 +47,9 @@ function makeHtmlBoard() {
     }
     htmlBoard.append(top);
 
-    // TODO: add comment for this code
+    //creating thje 6x7 game board and assigning coordinates
+    // to each cell (x,y). Top left corner is (0,0) and bottom
+    //right corner is (7,6). 
     for (let y = 0; y < HEIGHT; y++) {
         const row = document.createElement("tr");
         for (let x = 0; x < WIDTH; x++) {
