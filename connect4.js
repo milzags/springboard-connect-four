@@ -64,8 +64,13 @@ function makeHtmlBoard() {
 /** findSpotForCol: given column x, return top empty y (null if filled) */
 
 function findSpotForCol(x) {
-  // TODO: write the real version of this, rather than always returning 0
-  return 0;
+  for (let i = HEIGHT; i > 0; i--) {
+    const filled = document.getElementById(`${i}-${x}`);
+    if (cell.childElementCount === 0) {
+      return i;
+    }
+  }
+  return null;
 }
 
 /** placeInTable: update DOM to place piece into HTML table of board */
