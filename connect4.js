@@ -9,6 +9,7 @@ let currentPlayer;
 let id = 1;
 let winner = null;
 let isGameOver = false;
+let makeArray = makeBoard(HEIGHT);
 
 
 /** makeBoard: create in-JS board structure:
@@ -66,7 +67,7 @@ function makeHtmlBoard() {
 function findSpotForCol(x) {
   for (let i = HEIGHT; i > 0; i--) {
     const filled = document.getElementById(`${i}-${x}`);
-    if (cell.childElementCount === 0) {
+    if (filled.childElementCount === 0) {
       return i;
     }
   }

@@ -27,7 +27,7 @@
 }
 
 #column-top td:hover {
-  background-color: gold;
+  background-color: rgba(0, 225, 255, 0.384);
 }
 
 h1 {
