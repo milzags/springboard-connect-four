@@ -9,7 +9,7 @@ let currentPlayer;
 let id = 1;
 let winner = null;
 let isGameOver = false;
-let makeArray = makeBoard(HEIGHT);
+let boardArr = [];
 
 
 /** makeBoard: create in-JS board structure:
@@ -17,16 +17,10 @@ let makeArray = makeBoard(HEIGHT);
  */
 
 function makeBoard(HEIGHT) {
-  // TODO: set "board" to empty HEIGHT x WIDTH matrix array
-    let boardArr = [];
+  // TODO: set "board" to empty HEIGHT x WIDTH matrix array 
     for (i = 0; i < HEIGHT; i++) {
-        let rowArr = [];
-        for (let j = 0; j < WIDTH; j++) {
-            rowArr.push(null);
+      boardArr.push(Array.from({length : WIDTH}));
         }
-        boardArr.push(rowArr);
-    }
-    return boardArr;  
 };
 
 
@@ -65,13 +59,10 @@ function makeHtmlBoard() {
 /** findSpotForCol: given column x, return top empty y (null if filled) */
 
 function findSpotForCol(x) {
-  for (let i = HEIGHT; i > 0; i--) {
-    const filled = document.getElementById(`${i}-${x}`);
-    if (filled.childElementCount === 0) {
-      return i;
-    }
-  }
-  return null;
+  for (let i = HEIGHT - 1; i >= 0; i--) {
+  
+
+}
 }
 
 /** placeInTable: update DOM to place piece into HTML table of board */
