@@ -1,15 +1,16 @@
-// selectors:
+class Player {
+    constructor(color) {
+        this.color = color;
+    }
+};
 
-let tableRow = document.getElementsByTagName('tr');
-let tableCell = document.getElementsByTagName('td');
-let tableSlot = document.querySelectorAll('.slot');
+//create main game class:
+class Game {
+    constructor(playerOne = new Player('red'), playerTwo = new Player('yellow'))
+};
+
 const playerTurn = document.querySelector('.player-turn');
 const resetBtn = document.querySelector('.reset');
-let playerOne;
-let playerTwo;
-let playerOneColor = 'red';
-let playerTwoColor = 'yellow';
-
 
 //loop over the possible cell locations
 for (let i = 0; i < tableCell.length; i++) {
@@ -170,5 +171,3 @@ resetBtn.addEventListener('click', () => {
     playerTurn.style.color = 'black';
     return (currentPlayer == playerOne ? playerTurn.textContent == `${playerOne}'s Turn!` : playerTurn.textContent == `${playerTwo}'s turn!`);
 });
-
-
